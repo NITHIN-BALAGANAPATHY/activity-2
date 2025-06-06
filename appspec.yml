@@ -1,5 +1,11 @@
 version: 0.0
-os: linux
+os: windows
 files:
   - source: /
-    destination: /var/www/html
+    destination: "C:\\inetpub\\wwwroot"
+
+hooks:
+  AfterInstall:
+    - location: scripts\after_install.ps1
+      timeout: 300
+      runas: Administrator
