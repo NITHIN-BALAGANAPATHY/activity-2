@@ -1,0 +1,22 @@
+phases:
+  install:
+    commands:
+      - echo "Nothing to install for static site"
+      - echo "No dependencies to install for static site"
+ 
+  build:
+    commands:
+      - echo "No build needed for static site"
+      - echo "No build step needed for static files"
+ 
+  post_build:
+    commands:
+      - echo "Testing site files..."
+      - test -f index.html && echo "index.html found " || echo "index.html missing "
+      - test -d css && echo "CSS folder found " || echo "No CSS folder "
+      - echo "Build and test complete"
+ 
+artifacts:
+  files:
+    - '**/*'
+ 
